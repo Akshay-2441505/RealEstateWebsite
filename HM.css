@@ -1,0 +1,423 @@
+:root {
+  --primary-color: #001f3f; /* Navy Blue */
+  --secondary-color: #FFC107; /* Construction Yellow */
+  --tertiary-color: #343A40; /* Dark Gray */
+  --light-gray-bg: #f8f9fa;
+  --white-bg: #FFFFFF;
+  --text-on-dark: #FFFFFF;
+  --text-on-light: #343A40;
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Open Sans', sans-serif;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-body);
+    background-color: var(--light-gray-bg); /* Default background */
+    color: var(--text-on-light);
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+nav.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+.navbar-brand {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary-color) !important; /* Changed from #0e0e0d */
+}
+
+.navbar-nav .nav-link {
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--primary-color) !important; /* Darker for better contrast on transparent/light bg */
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active { /* Added active state styling */
+  color: var(--secondary-color) !important; /* Yellow accent on hover/active */
+  font-weight: bold;
+}
+
+header {
+    height: 100vh;
+    background-image: url('images/construction_hero.jpg'); /* Placeholder image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+}
+
+header .content {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    text-align: left;
+    color: var(--text-on-dark); /* White text on dark hero image */
+    padding: 20px;
+    background-color: rgba(0, 31, 63, 0.5); /* Semi-transparent navy overlay for text readability */
+    border-radius: 8px;
+}
+
+header .content h1 {
+    font-size: 3rem;
+    font-family: var(--font-heading);
+    font-weight: 700; /* Montserrat Bold */
+}
+
+header .content p {
+    font-size: 1.2rem;
+    font-family: var(--font-body);
+}
+
+header .content button {
+    background-color: var(--secondary-color); /* Yellow button */
+    color: var(--primary-color); /* Dark text on yellow button */
+    border: none;
+    padding: 10px 20px;
+    font-family: var(--font-heading);
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+header .content button:hover {
+   background-color: #e0a800; /* Darker yellow on hover */
+}
+
+.offers-section { /* Renamed to services-section conceptually */
+    width: 90%;
+    padding: 40px 20px; /* Adjusted padding */
+    max-width: 1200px;
+    margin: 2rem auto;
+    background-color: var(--white-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.offers-header h1, .property-header h1 { /* Common styling for section headers */
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+.offers-header p, .property-header p {
+    font-family: var(--font-body);
+    color: var(--tertiary-color);
+    margin-bottom: 1.5rem;
+}
+
+.offers-header {
+    text-align: left; 
+    margin-bottom: 1rem;
+}
+
+.offers-container {
+    display: flex;
+    gap: 1.5rem; /* Increased gap */
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 1rem 0;
+}
+
+.offer-card {
+    background: var(--white-bg);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    flex: 0 0 calc(33.333% - 1rem); 
+    min-width: 300px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+.offer-card h1 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+.offer-card p {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--tertiary-color);
+    flex-grow: 1; 
+    margin-bottom: 1rem;
+}
+
+.offer-card button {
+    background-color: var(--primary-color);
+    color: var(--text-on-dark);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: var(--font-body);
+    align-self: flex-start; 
+    margin-top: auto; 
+}
+
+.offer-card button:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.offer-card img {
+    width: 100%; 
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px; 
+    margin-bottom: 1rem; 
+}
+
+.property-section { 
+    width: 90%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 40px 20px; 
+    background-color: var(--light-gray-bg); 
+    border-radius: 8px;
+}
+
+.property-header {
+    text-align: left; 
+    margin-bottom: 1rem;
+}
+
+.property-container {
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 1.5rem;
+    padding: 1rem 0;
+    justify-content: center; 
+}
+
+.property-item {
+  text-align: center;
+  color: var(--primary-color);
+  font-family: var(--font-body); 
+  flex-basis: calc(33.333% - 1.5rem); 
+  min-width: 180px; 
+  margin-bottom: 1rem;
+}
+.property-item p {
+    margin-top: 0.5rem;
+    font-weight: bold;
+}
+
+.property-container img {
+    width: 100%; 
+    height: 180px; 
+    object-fit: cover;
+    border-radius: 8px; 
+    border: 2px solid var(--secondary-color); 
+    transition: transform 0.3s ease;
+}
+.property-container img:hover {
+    transform: scale(1.05);
+}
+
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+  background-color: var(--primary-color); 
+  color: var(--text-on-dark); 
+  border-radius: 15px;
+  margin: 3rem auto; 
+  width: 90%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); 
+}
+
+.banner-content {
+  flex: 1;
+  padding-right: 30px; 
+}
+
+.banner-content h1 {
+  font-size: 2.5rem; 
+  font-weight: bold;
+  font-family: var(--font-heading);
+  color: var(--text-on-dark); 
+  margin: 0;
+  line-height: 1.3;
+}
+
+.banner-content h1 span {
+  color: var(--secondary-color); 
+}
+
+.banner-content p {
+  font-size: 1.1rem; 
+  font-family: var(--font-body);
+  color: var(--light-gray-bg); 
+  margin-bottom: 25px; 
+}
+
+.banner-content button {
+  padding: 12px 25px; 
+  font-size: 1rem;
+  font-family: var(--font-heading);
+  font-weight: bold;
+  background-color: var(--secondary-color); 
+  color: var(--primary-color); 
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.banner-content button:hover {
+  background-color: #e0a800; 
+}
+
+.banner-image {
+  flex: 1;
+  text-align: right;
+}
+
+.banner-image img {
+  max-width: 100%;
+  border-radius: 15px;
+  width: 400px; 
+  height: auto; 
+  object-fit: cover;
+}
+
+.surprise-section { 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+  background-color: var(--light-gray-bg); 
+  border-radius: 15px;
+  margin: 3rem auto; 
+  width: 90%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.surprise-header { 
+    flex: 2; 
+    padding-right: 20px;
+}
+
+.surprise-section h1 {
+  color:  var(--primary-color); 
+  font-family: var(--font-heading);
+  font-weight: bold;
+  font-size: 2rem; 
+}
+
+.surprise-section p {
+  color: var(--tertiary-color); 
+  font-family: var(--font-body);
+  font-size: 1.1rem; 
+  margin: 10px 0 20px;
+}
+
+.surprise-container button { 
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-family: var(--font-heading);
+  font-weight: bold;
+  background-color: var(--secondary-color); 
+  color: var(--primary-color); 
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.surprise-container button:hover {
+  background-color: #e0a800; 
+}
+
+.surprise-image {
+  flex: 1;
+  text-align: center; 
+}
+.surprise-image img {
+  max-width: 100px; 
+  height: auto;
+}
+
+footer {
+  color: var(--text-on-dark);
+  background-color: var(--tertiary-color); 
+  text-align: center;
+  padding: 20px; 
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 992px) {
+  .offer-card {
+    flex: 0 0 calc(50% - 1rem); 
+  }
+  .property-item {
+    flex-basis: calc(50% - 1.5rem); 
+  }
+  .banner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .banner-content {
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
+  .banner-image {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  header .content {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 90%;
+  }
+  .offers-container {
+    flex-direction: column; 
+    align-items: center;
+  }
+  .offer-card {
+    flex: 0 0 90%; 
+    max-width: 400px;
+  }
+  .property-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .property-item {
+    flex-basis: 80%;
+    max-width: 350px;
+  }
+  .surprise-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  .surprise-header {
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
+  .surprise-image {
+    margin-top: 20px;
+  }
+}
+

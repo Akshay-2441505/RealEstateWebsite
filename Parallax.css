@@ -1,0 +1,181 @@
+:root {
+  --primary-color: #001f3f; /* Navy Blue */
+  --secondary-color: #FFC107; /* Construction Yellow */
+  --tertiary-color: #343A40; /* Dark Gray */
+  --light-gray-bg: #f8f9fa;
+  --white-bg: #FFFFFF;
+  --text-on-dark: #FFFFFF;
+  --text-on-light: #343A40;
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Open Sans', sans-serif;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  background-color: var(--white-bg); /* Default page background */
+}
+
+/* Navbar styling - ensure consistency */
+.navbar {
+    /* Assuming fixed-top is applied in HTML, style for a light navbar */
+    background-color: rgba(255, 255, 255, 0.95) !important; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 1030;
+}
+
+.navbar.bg-transparent {
+    background-color: transparent !important; /* Override for initial transparent state if needed */
+}
+
+.navbar-brand {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary-color) !important; /* Consistent brand color */
+}
+
+.navbar-nav .nav-link {
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--primary-color) !important; /* Links color on light/transparent navbar */
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: var(--secondary-color) !important;
+  font-weight: bold;
+}
+
+/* Parallax Sections */
+.parallax {
+  min-height: 80vh; /* Adjusted height */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-on-dark);
+  text-align: center;
+}
+
+.parallax1#about-hero {
+  background-image: url("images/about_hero_construction.jpg"); /* Placeholder: Team/Foundation Image */
+  min-height: 100vh;
+}
+
+.parallax2#about-motto {
+  background-image: url("images/about_vision_future.jpg"); /* Placeholder: Future/Vision Image */
+  min-height: 60vh;
+}
+
+.parallax .overlay, .parallax .overlay-text {
+  background-color: rgba(0, 31, 63, 0.65); /* Semi-transparent navy overlay for text readability */
+  padding: 40px;
+  border-radius: 8px;
+  max-width: 80%;
+}
+
+.parallax .overlay h1, .parallax .overlay-text h1 {
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: var(--white-bg);
+}
+
+.parallax .overlay p {
+  font-family: var(--font-body);
+  font-size: 1.3rem;
+  color: var(--light-gray-bg);
+}
+
+/* Content Section Styling */
+.content-section.about-content {
+  padding: 60px 20px;
+  background: var(--white-bg);
+  color: var(--text-on-light);
+  text-align: left; /* Changed from center for better readability of longer text */
+  max-width: 900px; /* Limit width for better readability */
+  margin: 0 auto; /* Center the content block */
+}
+
+.content-section.about-content h2 {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem; /* Increased margin */
+  color: var(--primary-color);
+  font-weight: 700;
+  text-align: center; /* Center section titles */
+}
+
+.content-section.about-content p, .content-section.about-content ul {
+  font-family: var(--font-body);
+  font-size: 1.1rem; /* Slightly increased body text size */
+  line-height: 1.8;
+  color: var(--tertiary-color);
+  margin-bottom: 1.5rem;
+}
+
+.content-section.about-content ul {
+    list-style: none; /* Remove default bullets */
+    padding-left: 0;
+}
+
+.content-section.about-content ul li {
+    padding-left: 25px; /* Space for custom bullet */
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.content-section.about-content ul li::before {
+    content: '\f0da'; /* FontAwesome chevron-right or similar */
+    font-family: 'Font Awesome 5 Free'; /* Ensure FontAwesome is loaded */
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color); /* Accent color for bullets */
+    font-size: 1em;
+}
+
+
+footer {
+  color: var(--text-on-dark);
+  background-color: var(--tertiary-color);
+  text-align: center;
+  padding: 20px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  margin-top: 0; /* Remove top margin if parallax is last element */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .parallax .overlay h1, .parallax .overlay-text h1 {
+    font-size: 2.5rem;
+  }
+  .parallax .overlay p {
+    font-size: 1.1rem;
+  }
+  .content-section.about-content h2 {
+    font-size: 2rem;
+  }
+  .content-section.about-content {
+    padding: 40px 15px;
+  }
+  .navbar-brand {
+    font-size: 1.5rem;
+  }
+  .navbar-nav .nav-link {
+    font-size: 1rem;
+  }
+}
+

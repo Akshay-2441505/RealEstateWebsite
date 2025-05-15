@@ -1,0 +1,256 @@
+:root {
+  --primary-color: #001f3f; /* Navy Blue */
+  --secondary-color: #FFC107; /* Construction Yellow */
+  --tertiary-color: #343A40; /* Dark Gray */
+  --light-gray-bg: #f8f9fa;
+  --white-bg: #FFFFFF;
+  --text-on-dark: #FFFFFF;
+  --text-on-light: #343A40;
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Open Sans', sans-serif;
+}
+
+body {
+    background-color: var(--white-bg);
+    font-family: var(--font-body);
+    color: var(--text-on-light);
+    padding-top: 70px; /* Account for fixed navbar */
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: var(--primary-color) !important; /* Solid primary color for homepage navbar */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--secondary-color) !important; /* Yellow brand name on navy navbar */
+}
+
+.navbar-nav .nav-link {
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.75) !important; /* Lighter text for links on navy navbar */
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--white-bg) !important;
+    font-weight: bold;
+}
+
+/* Carousel Styling */
+#heroCarousel .carousel-item {
+    height: 80vh; /* Adjust height as needed */
+    min-height: 400px;
+}
+
+#heroCarousel .carousel-item img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    filter: brightness(0.7); /* Darken images slightly for better text contrast */
+}
+
+.carousel-caption-custom {
+    position: absolute;
+    bottom: 20%; /* Adjust vertical position */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    color: var(--text-on-dark);
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 31, 63, 0.5); /* Semi-transparent navy overlay */
+    border-radius: 8px;
+    max-width: 70%;
+}
+
+.carousel-caption-custom h1 {
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.carousel-caption-custom p {
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+}
+
+/* Section Styling */
+.section-header {
+    margin-bottom: 40px;
+}
+.section-header h2 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.section-header p {
+    font-family: var(--font-body);
+    color: var(--tertiary-color);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Services Overview Section */
+.services-overview-section {
+    padding: 60px 0;
+    background-color: var(--light-gray-bg);
+}
+
+.service-item {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.service-item img {
+    width: 100%;
+    max-width: 350px; /* Control image size */
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 3px solid var(--secondary-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.service-item img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+.service-item h3 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+.service-item a {
+    text-decoration: none;
+}
+
+/* Featured Projects Section */
+.featured-projects-section {
+    padding: 60px 0;
+    background-color: var(--white-bg);
+}
+
+.project-item {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.project-item img {
+    width: 100%;
+    max-width: 350px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 3px solid var(--primary-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-item img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+.project-item h3 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+.project-item a {
+    text-decoration: none;
+}
+
+/* Why Choose Us Section */
+.why-choose-us-section {
+    padding: 60px 0;
+    background-color: var(--light-gray-bg);
+}
+
+.value-item {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+}
+.value-item img {
+    width: 100%;
+    max-width: 300px; /* Control image size */
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    /* border: 3px solid var(--secondary-color); */
+}
+.value-item h3 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    font-size: 1.6rem; /* Slightly larger for value propositions */
+    margin-bottom: 10px;
+}
+.value-item p {
+    font-family: var(--font-body);
+    color: var(--tertiary-color);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+footer {
+  color: var(--text-on-dark);
+  background-color: var(--tertiary-color);
+  text-align: center;
+  padding: 20px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  margin-top: 0; /* Remove top margin if section is last element */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+    .carousel-caption-custom h1 {
+        font-size: 2.2rem;
+    }
+    .carousel-caption-custom p {
+        font-size: 1rem;
+    }
+    .service-item img, .project-item img {
+        height: 200px;
+    }
+}
+
+@media (max-width: 767px) {
+    body {
+        padding-top: 56px; /* Adjust for smaller navbar height if it changes */
+    }
+    #heroCarousel .carousel-item {
+        height: 60vh;
+    }
+    .carousel-caption-custom {
+        bottom: 15%;
+        max-width: 85%;
+    }
+    .carousel-caption-custom h1 {
+        font-size: 1.8rem;
+    }
+    .carousel-caption-custom p {
+        font-size: 0.9rem;
+    }
+    .section-header h2 {
+        font-size: 2rem;
+    }
+    .section-header p {
+        font-size: 1rem;
+    }
+    .service-item, .project-item, .value-item {
+        margin-bottom: 40px;
+    }
+}
+
